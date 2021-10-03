@@ -1,10 +1,14 @@
 #include <iostream>
 using namespace std;
+int itc_abs(int num) {
+	if (num < 0) num = -num;
+	return num;
+}
 void bin(int a, int arr[], int arr_bin[], int& n) {
 	int znak = 0, j = 0;
 	n = 0;
 	if (a < 0) znak = 1;
-	a = abs(a);
+	a = itc_abs(a);
 	while (a != 0) {
 		arr[n] = a % 2;
 		a /= 2;
@@ -52,19 +56,19 @@ int main() {
 	int a, arr[100], n, arr_bin[100];
 	cin >> a;
 	bin(a, arr, arr_bin, n);
-	cout << "Бинарный: ";
+	cout << "Áèíàðíûé: ";
 	for (int i = 0; i != n; i++) {
 		cout << arr_bin[i];
 	}
 	cout << endl;
 	obratny(arr_bin);
-	cout << "Обратный: ";
+	cout << "Îáðàòíûé: ";
 	for (int i = 0; i != n; i++) {
 		cout << arr_bin[i];
 	}
 	dop(arr_bin);
 	cout << endl;
-	cout << "Дополнительный: ";
+	cout << "Äîïîëíèòåëüíûé: ";
 	for (int i = 0; i != n; i++) {
 		cout << arr_bin[i];
 	}
