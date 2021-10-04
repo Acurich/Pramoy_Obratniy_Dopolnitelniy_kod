@@ -45,7 +45,7 @@ void dop(int arr_bin[]) {
 			else {
 				arr_bin[8 - i - 1] = 1;
 				plus = 0;
-				break;
+				return 0;
 			}
 		}
 	}
